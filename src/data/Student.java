@@ -7,7 +7,7 @@ public class Student {
 
     public Student(String name, int age) {
         this.name = name;
-        this.id = (int)(Math.random()*10000);;
+        this.id = (int)(Math.random()*10000);
         this.age = age;
     }
 }
