@@ -17,5 +17,13 @@ public class University {
         this.studentList = new ArrayList<>();
         this.courseList = new ArrayList<>();
     }
-
+    public void addTeacher(Teacher teacher){
+        this.teacherList.add(teacher);
+    }
+    public void addStudent(Student student){
+        this.studentList.add(student);
+    }
+    public void addCourse(Course course){
+        this.courseList.add(course);
+    }
 }

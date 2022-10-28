@@ -4,20 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Course {
-    List<Course> currentStudents;
+    List<Student> currentStudents;
     public String name;
     public String classroom;
-    public Teacher teacherName;
-    public Student student;
+    public String teacherName;
 
-
-    public Course(String name, String classroom, Teacher teacherName) {
+    public Course(String name, String classroom, String teacherName) {
         this.name = name;
         this.classroom = classroom;
         this.teacherName = teacherName;
         this.currentStudents = new ArrayList<>();
     }
 
+    public void addStudent(Student student){
+        this.currentStudents.add(student);
+    }
 
 
 }
