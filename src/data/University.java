@@ -9,6 +9,7 @@ public class University {
     private List<Teacher> teacherList;
 
     private List<Student> studentList;
+
     private List<Course> courseList;
 
     public University(String name) {
@@ -17,6 +18,19 @@ public class University {
         this.studentList = new ArrayList<>();
         this.courseList = new ArrayList<>();
     }
+
+    public List<Course> getCourseList() {
+        return courseList;
+    }
+
+    public List<Student> getStudentList() {
+        return studentList;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     public void addTeacher(Teacher teacher){
         this.teacherList.add(teacher);
     }
@@ -25,5 +39,11 @@ public class University {
     }
     public void addCourse(Course course){
         this.courseList.add(course);
+    }
+    public void addStudentInCourse(int studentIndex, int courseIndex){
+        this.getCourseByIndex(courseIndex).addStudent(this.studentList.get(studentIndex));
+    }
+    public Course getCourseByIndex(int courseIndex){
+        return this.courseList.get(courseIndex);
     }
 }

@@ -19,6 +19,4 @@ public class Course {
     public void addStudent(Student student){
         this.currentStudents.add(student);
     }
-
-
 }

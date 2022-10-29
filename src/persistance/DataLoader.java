@@ -8,6 +8,7 @@ public class DataLoader {
         loadTeachers(globantU);
         loadStudents(globantU);
         loadCourse(globantU);
+        setStudentsInCourse(globantU);
         return globantU;
     }
 
@@ -45,7 +46,21 @@ public class DataLoader {
         university.addCourse(course3);
         university.addCourse(course4);
     }
-    private void studentsIntoCourse(Course course){
-
+    private static void setStudentsInCourse(University university){
+        university.addStudentInCourse(0,1);
+        university.addStudentInCourse(2,1);
+        university.addStudentInCourse(4,1);
+        university.addStudentInCourse(3,1);
+        university.addStudentInCourse(0,0);
+        university.addStudentInCourse(1,0);
+        university.addStudentInCourse(2,0);
+        university.addStudentInCourse(4,0);
+        university.addStudentInCourse(0,2);
+        university.addStudentInCourse(2,2);
+        university.addStudentInCourse(4,2);
+        university.addStudentInCourse(5,2);
+        university.addStudentInCourse(0,3);
+        university.addStudentInCourse(1,3);
+        university.addStudentInCourse(4,3);
     }
 }
