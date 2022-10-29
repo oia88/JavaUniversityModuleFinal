@@ -34,8 +34,12 @@ public class Main {
                         createNewStudent(globantU);
                         break;
                     case 4:
+                        createNewCourse(globantU);
                         break;
                     case 5:
+
+                        break;
+                    case 6:
                         System.out.println("Thanks for use our app, have a nice day!");
                         System.exit(0);
                         break;
@@ -109,5 +113,49 @@ public class Main {
         System.out.println("type the code of the course");
         int courseCode = scan.nextInt();
         university.addStudentInCourse(studentNumber, courseCode);
+    }
+    public static void createNewCourse(University university){
+       Scanner scan = new Scanner(System.in);
+        System.out.println("Entry the new course name");
+        String name = scan.nextLine();
+        System.out.println("Entry the new course classroom");
+        String classroom = scan.nextLine();
+        System.out.println("Entry the new course teacher's name");
+        System.out.println(university.getTeachersName());
+        String teacher = scan.nextLine();
+        university.createNewCourse(name, classroom, teacher);
+        System.out.println(university.getCourseList());
+        System.out.println("**NOTE** keep in mind the order of the list, the list starts at 0, so add the student with the last number of the list");
+        System.out.println("also take into account the code of the class, in this way add the necessary students to the class");
+        System.out.println("--Current students--");
+        System.out.println(university.getStudentList());
+        System.out.println("Type the number in list of the new student");
+        int studentNumber = scan.nextInt();
+        System.out.println("type the code of the course");
+        int courseCode = scan.nextInt();
+        university.addStudentInCourse(studentNumber, courseCode);
+        int option;
+        do{
+            System.out.println("Do you need add another student?");
+            System.out.println("1. Yes");
+            System.out.println("2. No");
+            option = scan.nextInt();
+                switch (option){
+                    case 1:
+                        System.out.println("--Current students--");
+                        System.out.println(university.getStudentList());
+                        System.out.println("--Current teachers--");
+                        System.out.println(university.getCoursesName());
+                        System.out.println("Type the number in list of the new student");
+                        studentNumber = scan.nextInt();
+                        System.out.println("type the code of the course");
+                        courseCode = scan.nextInt();
+                        university.addStudentInCourse(studentNumber, courseCode);
+                        break;
+                    case 2:
+                        System.out.println("Back to the previous menu");
+                        break;
+                }
+        } while (option != 2);
     }
 }

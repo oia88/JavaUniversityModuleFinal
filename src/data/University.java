@@ -19,7 +19,13 @@ public class University {
         this.courseList = new ArrayList<>();
     }
 
-    public List<Course> getCourseList() { return courseList; }
+    public String getCourseList() {
+        String coursesList = "";
+        for(int i = 0; i < courseList.size(); i++){
+            coursesList += this.courseList.get(i) + "\n";
+        }
+        return coursesList;
+    }
 
     public String getStudentList() {
         String studentsList = "";
@@ -48,6 +54,13 @@ public class University {
            courseName += this.courseList.get(i).getName() + "\n";
        }
        return courseName;
+    }
+    public String getTeachersName(){
+        String teachersName = "";
+        for(int i = 0; i < this.teacherList.size(); i++){
+            teachersName += this.teacherList.get(i).getName() + "\n";
+        }
+        return teachersName;
     }
     public Course getPythonData(int pythonIndex){
         Course python = this.getCourseByIndex(0);
@@ -82,5 +95,9 @@ public class University {
         University.this.addStudent(newStudent);
         return newStudent;
     }
-
+    public Course createNewCourse(String name, String classroom, String teacherName){
+        Course newCourse = new Course(name, classroom, teacherName);
+        University.this.addCourse(newCourse);
+        return newCourse;
+    }
 }
