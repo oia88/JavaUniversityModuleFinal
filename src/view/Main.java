@@ -31,6 +31,7 @@ public class Main {
                         printMenuCourses(globantU);
                         break;
                     case 3:
+                        createNewStudent(globantU);
                         break;
                     case 4:
                         break;
@@ -87,5 +88,26 @@ public class Main {
                         break;
                 }
         } while (option != 5);
+    }
+    public static void createNewStudent(University university){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Entry the new student name");
+        String name = scan.nextLine();
+        System.out.println("Entry the new student age");
+        int age = scan.nextInt();
+        System.out.println(university.createNewStudent(name, age));
+        System.out.println("--Current students--");
+        System.out.println(university.getStudentList());
+        System.out.println("**NOTE** keep in mind the order of the list, the list starts at 0, so add the student with the last number of the list");
+        System.out.println("The class codes are:");
+        System.out.println("0. Python");
+        System.out.println("1. Java");
+        System.out.println("2. Javascript");
+        System.out.println("3. C++");
+        System.out.println("Type the number in list of the new student");
+        int studentNumber = scan.nextInt();
+        System.out.println("type the code of the course");
+        int courseCode = scan.nextInt();
+        university.addStudentInCourse(studentNumber, courseCode);
     }
 }

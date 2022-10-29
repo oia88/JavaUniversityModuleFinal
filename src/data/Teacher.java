@@ -13,7 +13,6 @@ public abstract class Teacher {
         this.totalSalary = calculateSalary();
     }
     public abstract double calculateSalary();
-
     @Override
     public String toString() {
           return "Teacher: " + "\n" + "#ID: " + this.id + "\n" + "Name: " + this.name + "\n" +"Salary: " + this.totalSalary + "\n" + "---------------------" + "\n";

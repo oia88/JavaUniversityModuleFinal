@@ -19,12 +19,14 @@ public class University {
         this.courseList = new ArrayList<>();
     }
 
-    public List<Course> getCourseList() {
-        return courseList;
-    }
+    public List<Course> getCourseList() { return courseList; }
 
-    public List<Student> getStudentList() {
-        return studentList;
+    public String getStudentList() {
+        String studentsList = "";
+        for(int i = 0; i < studentList.size(); i++){
+            studentsList += this.studentList.get(i) + "\n";
+        }
+        return studentsList;
     }
 
     public String getTeacherList() {
@@ -34,7 +36,6 @@ public class University {
         }
         return teachersList;
     }
-
     public String getName() {
         return name;
     }
@@ -75,6 +76,11 @@ public class University {
     }
     public void addStudentInCourse(int studentIndex, int courseIndex){
         this.getCourseByIndex(courseIndex).addStudent(this.studentList.get(studentIndex));
+    }
+    public Student createNewStudent(String name, int age){
+        Student newStudent = new Student(name, age);
+        University.this.addStudent(newStudent);
+        return newStudent;
     }
 
 }
