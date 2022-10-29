@@ -10,4 +10,9 @@ public class Student {
         this.id = (int)(Math.random()*10000);
         this.age = age;
     }
+
+    @Override
+    public String toString() {
+        return "Student: " + "\n" + "#ID: " + this.id + "\n" +"Name: " + this.name + "\n" + "------------" + "\n";
+    }
 }

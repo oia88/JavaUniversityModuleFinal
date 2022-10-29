@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Course {
-    List<Student> currentStudents;
+    private List<Student> currentStudents;
     public String name;
     public String classroom;
     public String teacherName;
@@ -16,7 +16,16 @@ public class Course {
         this.currentStudents = new ArrayList<>();
     }
 
+    public String getName() {
+        return name;
+    }
+
+
     public void addStudent(Student student){
         this.currentStudents.add(student);
+    }
+    @Override
+    public String toString() {
+        return "Course: " + "\n" + "Name: " + this.name + "\n" + "Classroom: " + this.classroom + "\n" + "Teacher: " + this.teacherName + "\n" + this.currentStudents + "\n";
     }
 }

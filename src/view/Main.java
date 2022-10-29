@@ -10,6 +10,7 @@ public class Main {
         University globantU = DataLoader.loadUniversity();
 
         System.out.println("Welcome to " + globantU.getName());
+        System.out.println("----------------------------");
         System.out.println("Please choose one of the following options:");
         Scanner scan = new Scanner(System.in);
 
@@ -20,7 +21,71 @@ public class Main {
             System.out.println("3. Create a new Student");
             System.out.println("4. Create a new Course");
             System.out.println("5. Search to Student's courses");
-            System.out.println("Close the app");
+            System.out.println("6. Close the app");
+            option = scan.nextInt();
+                switch (option){
+                    case 1:
+                        printTeachersList(globantU);
+                        break;
+                    case 2:
+                        printMenuCourses(globantU);
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        System.out.println("Thanks for use our app, have a nice day!");
+                        System.exit(0);
+                        break;
+                    default:
+                        System.out.println("You must choose a valid option!");
+                        break;
+                }
+        } while (option != 5);
+    }
+
+    public static void printTeachersList(University university){
+        System.out.println("The Globant University teachers are:");
+        System.out.println("------------------------");
+        System.out.println(university.getTeacherList());
+        System.out.println("------------------------");
+    }
+    public static void printMenuCourses(University university){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Globant University Courses:");
+        System.out.println("------------------------");
+        System.out.println(university.getCoursesName());
+        System.out.println("------------------------");
+        System.out.println("Choose a course to see their data:");
+        int option;
+        do{
+            System.out.println("1. Python");
+            System.out.println("2. Java");
+            System.out.println("3. Javascript");
+            System.out.println("4. C++");
+            System.out.println("5. Back to the main menu");
+            option = scan.nextInt();
+                switch (option){
+                    case 1:
+                        System.out.println(university.getPythonData(0));
+                        break;
+                    case 2:
+                        System.out.println(university.getJavaData(1));
+                        break;
+                    case 3:
+                        System.out.println(university.getJavascriptData(2));
+                        break;
+                    case 4:
+                        System.out.println(university.getCData(3));
+                        break;
+                    case 5:
+                        System.out.println("Back to the previous menu");
+                        break;
+                    default:
+                        System.out.println("You must choose a valid option!");
+                        break;
+                }
         } while (option != 5);
     }
 }
