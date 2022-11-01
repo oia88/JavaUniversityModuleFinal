@@ -22,7 +22,6 @@ public class Course {
     public String getName() {
         return name;
     }
-
     public void addStudent(Student student){
         this.currentStudents.add(student);
     }
