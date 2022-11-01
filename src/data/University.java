@@ -102,14 +102,14 @@ public class University {
         return newCourse;
     }
     public void findStudent(int id){
-        int contador = 0;
+        int counter = 0;
         for (int i = 0; i < this.courseList.size(); i++){
             for (int j = 0; j < courseList.get(i).getCurrentStudents().size(); j++){
                 if(id == this.courseList.get(i).getCurrentStudents().get(j).getId()){
                     do{
                         System.out.println(this.courseList.get(i).name);
-                        contador++;
-                    } while (contador < i );
+                        counter++;
+                    } while (counter < i );
                 }
             }
         }
