@@ -26,7 +26,6 @@ public class University {
         }
         return coursesList;
     }
-
     public String getStudentList() {
         String studentsList = "";
         for(int i = 0; i < studentList.size(); i++){
@@ -34,7 +33,6 @@ public class University {
         }
         return studentsList;
     }
-
     public String getTeacherList() {
         String teachersList = "";
         for (int i = 0; i < this.teacherList.size(); i++){
@@ -78,7 +76,6 @@ public class University {
         Course c = this.getCourseByIndex(3);
         return c;
     }
-
     public void addTeacher(Teacher teacher){
         this.teacherList.add(teacher);
     }

@@ -7,14 +7,13 @@ public class Teacher_FullTime extends Teacher{
 
     private int expYears;
 
-    public Teacher_FullTime(String name, double baseSalary, int exp) {
+    public Teacher_FullTime(String name, double baseSalary, int expYears) {
         super(name, baseSalary);
-        this.expYears = exp;
+        this.expYears = expYears;
     }
-
     @Override
     public double calculateSalary() {
-        double salary = baseSalary * (expYears + 110/100);
+        double salary = baseSalary * (expYears * 1.1);
         return salary;
     }
 }

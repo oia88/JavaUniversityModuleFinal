@@ -13,7 +13,6 @@ public class Main {
         System.out.println("----------------------------");
         System.out.println("Please choose one of the following options:");
         Scanner scan = new Scanner(System.in);
-
         int option;
         do{
             System.out.println("1. Show all the Teachers");
@@ -190,6 +189,5 @@ public class Main {
                         break;
                 }
         } while (option != 2);
-
     }
 }
