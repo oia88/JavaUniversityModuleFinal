@@ -78,6 +78,7 @@ public class University {
         Course c = this.getCourseByIndex(3);
         return c;
     }
+
     public void addTeacher(Teacher teacher){
         this.teacherList.add(teacher);
     }
@@ -99,5 +100,18 @@ public class University {
         Course newCourse = new Course(name, classroom, teacherName);
         University.this.addCourse(newCourse);
         return newCourse;
+    }
+    public void findStudent(int id){
+        int contador = 0;
+        for (int i = 0; i < this.courseList.size(); i++){
+            for (int j = 0; j < courseList.get(i).getCurrentStudents().size(); j++){
+                if(id == this.courseList.get(i).getCurrentStudents().get(j).getId()){
+                    do{
+                        System.out.println(this.courseList.get(i).name);
+                        contador++;
+                    } while (contador < i );
+                }
+            }
+        }
     }
 }

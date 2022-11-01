@@ -11,6 +11,14 @@ public class Student {
         this.age = age;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     @Override
     public String toString() {
         return "Student: " + "\n" + "#ID: " + this.id + "\n" +"Name: " + this.name + "\n" + "------------" + "\n";

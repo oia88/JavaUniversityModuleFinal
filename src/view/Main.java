@@ -37,7 +37,7 @@ public class Main {
                         createNewCourse(globantU);
                         break;
                     case 5:
-
+                        findStudent(globantU);
                         break;
                     case 6:
                         System.out.println("Thanks for use our app, have a nice day!");
@@ -47,7 +47,7 @@ public class Main {
                         System.out.println("You must choose a valid option!");
                         break;
                 }
-        } while (option != 5);
+        } while (option != 6);
     }
 
     public static void printTeachersList(University university){
@@ -155,7 +155,41 @@ public class Main {
                     case 2:
                         System.out.println("Back to the previous menu");
                         break;
+                    default:
+                        System.out.println("You must choose a valid option!");
+                        break;
                 }
         } while (option != 2);
+    }
+    public static void findStudent(University university){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Entry the student id");
+        int studentId = scan.nextInt();
+        System.out.println("the student is enrolled in the following courses");
+        System.out.println("---------------------");
+        university.findStudent(studentId);
+        int option;
+        do{
+            System.out.println("Do you want to do another search?");
+            System.out.println("1. Yes");
+            System.out.println("2. No");
+            option = scan.nextInt();
+                switch (option){
+                    case 1:
+                        System.out.println("Entry the student id");
+                        studentId = scan.nextInt();
+                        System.out.println("the student is enrolled in the following courses");
+                        System.out.println("---------------------");
+                        university.findStudent(studentId);
+                        break;
+                    case 2:
+                        System.out.println("Back to the previous menu");
+                        break;
+                    default:
+                        System.out.println("You must choose a valid option!");
+                        break;
+                }
+        } while (option != 2);
+
     }
 }

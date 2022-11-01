@@ -16,10 +16,12 @@ public class Course {
         this.currentStudents = new ArrayList<>();
     }
 
+    public List<Student> getCurrentStudents() {
+        return currentStudents;
+    }
     public String getName() {
         return name;
     }
-
 
     public void addStudent(Student student){
         this.currentStudents.add(student);
